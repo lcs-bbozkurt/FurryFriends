@@ -13,6 +13,7 @@
 		8134B14C27CA4863004DEB85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8134B14B27CA4863004DEB85 /* Preview Assets.xcassets */; };
 		8134B15427CA55F4004DEB85 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8134B15327CA55F4004DEB85 /* RemoteImageView.swift */; };
 		8134B15627CA575E004DEB85 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8134B15527CA575E004DEB85 /* README.md */; };
+		C1B21B0B27CD934A00F8C998 /* FurryFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B21B0A27CD934A00F8C998 /* FurryFriend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		8134B14B27CA4863004DEB85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8134B15327CA55F4004DEB85 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
 		8134B15527CA575E004DEB85 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C1B21B0A27CD934A00F8C998 /* FurryFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurryFriend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				8134B14427CA4862004DEB85 /* FurryFriendsApp.swift */,
+				C1B21B0927CD932500F8C998 /* Models */,
 				8134B15227CA55BC004DEB85 /* Views */,
 				8134B14827CA4863004DEB85 /* Assets.xcassets */,
 				8134B14A27CA4863004DEB85 /* Preview Content */,
@@ -87,6 +90,14 @@
 				8134B15327CA55F4004DEB85 /* RemoteImageView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C1B21B0927CD932500F8C998 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C1B21B0A27CD934A00F8C998 /* FurryFriend.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1B21B0B27CD934A00F8C998 /* FurryFriend.swift in Sources */,
 				8134B14727CA4862004DEB85 /* ContentView.swift in Sources */,
 				8134B15427CA55F4004DEB85 /* RemoteImageView.swift in Sources */,
 				8134B14527CA4862004DEB85 /* FurryFriendsApp.swift in Sources */,
