@@ -36,6 +36,13 @@ struct ContentView: View {
                     Text("Another one!")
                 })
                     .buttonStyle(.bordered)
+                
+                HStack {
+                    Text("Favourites")
+                        .bold()
+                    
+                    Spacer()
+                }
         // Runs once when the app is opened
         .task {
             
