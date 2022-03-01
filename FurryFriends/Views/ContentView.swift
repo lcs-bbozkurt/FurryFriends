@@ -17,16 +17,25 @@ struct ContentView: View {
     
     // MARK: Computed properties
     var body: some View {
-        
         VStack {
-            
-            // Shows the main image
-            RemoteImageView(fromURL: currentImage)
-            
-            // Push main image to top of screen
-            Spacer()
-
-        }
+            VStack {
+                
+                // Shows the main image
+                RemoteImageView(fromURL: currentImage)
+               
+                // Push main image to top of screen
+                Spacer()
+                
+                // An heart image to add the dog images to favourites.
+                Image(systemName: "heart.circle")
+                    .font(.largeTitle)
+                
+                Button(action: {
+                    print("I have been pressed.")
+                }, label: {
+                    Text("Another one!")
+                })
+                    .buttonStyle(.bordered)
         // Runs once when the app is opened
         .task {
             
@@ -37,7 +46,7 @@ struct ContentView: View {
             // Replaces the transparent pixel image with an actual image of an animal
             // Adjust according to your preference ☺️
             currentImage = URL(string: remoteDogImage)!
-                        
+            
         }
         .navigationTitle("Furry Friends")
         
