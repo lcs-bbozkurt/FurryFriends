@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     // MARK: Stored properties
-    var currentFurryFriend: FurryFriend = FurryFriend(message: "", status: "")
+    @State var currentFurryFriend: FurryFriend = FurryFriend(message: "", status: "")
     
     // Address for main image
     // Starts as a transparent pixel – until an address for an animal's image is set
@@ -32,7 +32,12 @@ struct ContentView: View {
                 
                 
                 Button(action: {
-                    print("I have been pressed.")
+                    // The task help us update the user interface when the data is ready.
+                    Task {
+                        // Call the function that will get us a new dog image.
+                        await loadNewFurryFriend()
+                    }
+                    
                 }, label: {
                     Text("Another one!")
                 })
@@ -51,26 +56,38 @@ struct ContentView: View {
             
             // Runs once when the app is opened
             .task {
-                
-                // Example images for each type of pet
-                //let remoteCatImage = //"https://purr.objects-us-east-1.dream.io/i/JJiYI.jpg"
-                let remoteDogImage = "https://images.dog.ceo/breeds/labrador/lab_young.JPG"
-                
-                // Replaces the transparent pixel image with an actual image of an animal
-                // Adjust according to your preference ☺️
-                currentImage = URL(string: remoteDogImage)!
+                // Load a dog picture from the endpoint.
+                // We are "calling" or "invoking" the function named loadNewFurryFriend
+                // The term is called "call site" of a function
+                await loadNewFurryFriend()
                 
             }
             
             
             .navigationTitle("Furry Friends")
             
-            // MARK: Functions
+            
             
         }
     }
+    
+    
+    // MARK: Functions
+    
+    // Define the function "loadNewFurryFriend"
+    // This part is for definiton.
+    // Async keyword means this func can run alongside other tasks.
+    func loadNewFurryFriend() async {
+        // Example images for each type of pet
+        //let remoteCatImage = //"https://purr.objects-us-east-1.dream.io/i/JJiYI.jpg"
+        let remoteDogImage = "https://images.dog.ceo/breeds/labrador/lab_young.JPG"
+        
+        // Replaces the transparent pixel image with an actual image of an animal
+        // Adjust according to your preference ☺️
+        currentImage = URL(string: remoteDogImage)!
+        
+    }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
