@@ -11,7 +11,7 @@ struct ContentView: View {
     
     // MARK: Stored properties
     @Environment(\.scenePhase) var scenePhase
-    
+    @State var currentImageURL: FurryFriend = FurryFriend(message: "", status: "")
     
     @State var currentFurryFriend: FurryFriend = FurryFriend(message: "", status: "")
     
@@ -110,6 +110,8 @@ struct ContentView: View {
                 // Load the favourites from the file saved on the device
                 loadFurryFriends()
                 
+             
+                
             }
             
             // React to changes of state for the app. (foreground, inactive, background)
@@ -163,6 +165,15 @@ struct ContentView: View {
             //                                         V
             currentFurryFriend = try JSONDecoder().decode(FurryFriend.self, from: data)
             
+            // Use the String that contains the address of the image
+            // to make the RemoteImageView show the image
+            
+            
+          //  @State var currentFurryFriend: FurryFriend = FurryFriend(message: "", status: "")
+            
+           // RemoteImageView(fromURL: currentImage)
+            currentImage = URL(string: currentFurryFriend.message)!
+                       
             // Reset the flag that tracks whether the current joke
             // is a favourite
              currentFurryFriendAddedToFavourites = false

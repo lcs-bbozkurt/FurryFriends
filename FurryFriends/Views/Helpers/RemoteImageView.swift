@@ -33,7 +33,7 @@ struct RemoteImageView: View {
 struct RemoteImageView_Previews: PreviewProvider {
     
     // Uses a website that provides a different 640x360 image each time the address is loaded
-    static let example = URL(string: "https://picsum.photos/640/360")!
+    static let example = URL(string: "https://dog.ceo/api/breeds/image/random")!
     
     static var previews: some View {
         RemoteImageView(fromURL: example)
