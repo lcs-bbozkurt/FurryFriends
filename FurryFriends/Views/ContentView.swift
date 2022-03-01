@@ -24,12 +24,12 @@ struct ContentView: View {
                 // Shows the main image
                 RemoteImageView(fromURL: currentImage)
                 
-                // Push main image to top of screen
-                Spacer()
+                
                 
                 // An heart image to add the dog images to favourites.
                 Image(systemName: "heart.circle")
                     .font(.largeTitle)
+                
                 
                 Button(action: {
                     print("I have been pressed.")
@@ -42,9 +42,10 @@ struct ContentView: View {
                     Text("Favourites")
                         .bold()
                     
-                    Spacer()
+                    
                 }
-                
+                // Push main image to top of screen
+                Spacer()
                 
             }
             
